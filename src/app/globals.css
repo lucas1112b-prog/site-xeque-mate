@@ -1,13 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap');
 :root {
-  --background: #ffffff;
+  --whiteXeque: #FBFBFD;
   --foreground: #171717;
-}
+  --border-color01: linear-gradient(to right, #D9DCDA, #EDEFED);
+  --background: #FBFBFD;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --text-primary: #2D2D2D;
+  --text-secondary: #666;
+
+  --green01: #1C5F2A;
+
+  --yellow01: #FEC432;
 }
 
 html,
@@ -17,9 +21,8 @@ body {
 }
 
 body {
-  color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -35,8 +38,61 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+li{
+  font-family: "inter";
+}
+
+button{
+  font-family: "inter";
+}
+
+h1{
+  font-family: "Passion One";
+}
+
+h2{
+  font-family: "Inter";
+  color: var(--whiteXeque);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+svg{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "Inter";
+  background-color: var(--background);
+  width: 100%;
+  gap: 60px;
+  padding: 20px;
+}
+
+@media (max-width:1024px){
+  .page {
+    padding: 12px;
   }
+}
+
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--green01);
+  z-index: 9999;
+  pointer-events: none;
+
+  transform-origin: top;
+  transform: scaleY(0);
+  will-change: transform;
+  backface-visibility: hidden;
 }
